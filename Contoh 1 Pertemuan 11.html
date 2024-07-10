@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Contoh Strktur Kondisi</title></head>
+    <body>
+        Masukkan  Nilai Angka : <input type="number" id="nilaiAngka">
+        <button onclick="
+        var nAngka = parseInt(document.getElementById('nilaiAngka').value);
+        var nHuruf = '';
+        if ((nAngka > 85) && (nAngka <= 100)){
+            nHuruf = 'A';
+        }else if ((nAngka > 70) && (nAngka <= 85)){
+            nHuruf = 'B';
+        }else if ((nAngka > 60) && (nAngka <= 70)){
+            nHuruf = 'C';
+        }else if ((nAngka > 50) && (nAngka <= 60)){
+            nHuruf = 'D';
+        }else{ nHuruf = 'E'; }
+        document.getElementsByTagName('label')[0].innerHTML = nHuruf;
+        var status = '';
+        var bgColor = ''; 
+        var color = '';
+        switch(nHuruf){
+            case 'A' : status = 'Baik Sekali'; bgColor = 'green'; color = 'white'; break;
+            case 'B' : status = 'Baik'; bgColor = 'blue'; color = 'white'; break;
+            case 'C' : status = 'Cukup'; bgColor = 'yellow'; color = 'black'; break;
+            case 'D' : status = 'Kurang'; bgColor = 'orange'; color = 'white'; break;
+            default : status = 'Tidak Lulus'; bgColor = 'red'; color = 'white';         
+        }
+        document.getElementsByTagName('label')[1].innerHTML = status;
+        document.getElementsByTagName('label')[1].style = 'background-color: '+bgColor+';'+
+                                                       'color : '+color+';';
+        ">Tampilkan Hasil</button><hr>
+        Nilai Huruf : <label></label><br>
+        Status : <label></label>
+    </body>
+</html>
